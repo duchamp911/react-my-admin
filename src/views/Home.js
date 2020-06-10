@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { Component, Fragment } from 'react';
+import { Button } from 'antd';
 
-class Home extends React.Component {
+class Home extends Component {
     constructor(props){
       super(props);
       this.state = {}
@@ -8,7 +9,10 @@ class Home extends React.Component {
   
     render(){
       return (
-        <div>home</div>
+        <Fragment>
+          home
+          <Button type="primary">Primary</Button>
+        </Fragment>
       );
     }
   }

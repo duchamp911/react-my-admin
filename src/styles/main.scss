@@ -1,0 +1,10 @@
+// sass全局变量
+@import "./sassConfig.scss";
+
+// 重置浏览器默认样式
+@import "./normalize.scss";
+
+// sass全局公用样式
+body{
+    background-color: #001529 !important;
+}

@@ -66,3 +66,37 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+
+
+### 项目添加sass
+1，npm install sass-loader node-sass --save-dev 
+2，展示config文件夹 npm run eject  （前提是先提交项目到git仓库）
+3，在 webpack.config.js 中添加 
+,
+            {
+              test: /\.scss$/,
+              loaders: ['style-loader','css-loader','sass-loader'],
+            }
+4，重启项目
+
+### 全局配置sass变量
+1，安装 npm i sass-resources-loader -D
+2，在 webpack.config.js 中添加
+.concat({
+                loader: "sass-resources-loader",
+                 options: {
+                     resources: [path.resolve(__dirname, "./../src/styles/main.scss")] // scss公共变量所在文件的路径
+                   }
+              })
+
+3，配置跨域  npm i http-proxy-middleware
+    在 src 目录下新建 setupProxy.js 
+
+4，安装axios   npm i axios -S
+
+5，安装 npm i -g dotenv-cli
+    package.json 里配置
+"build:dev": "dotenv -e .env.development react-app-rewired build",
+    "build:pro": "dotenv -e .env.production react-app-rewired build",
+    "build:test": "dotenv -e .env.test react-app-rewired build"
